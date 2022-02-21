@@ -18,8 +18,12 @@
 
   <div class="table-users">
    <div class="header">Prediction</div>
+    {% if prediction] == 0 %}
+      <p> you dont have a Diabetes </p>
+    {% else %}
+      <p> you have a Diabetes </p>
+   {% endif %}
 
-      <p>Your Have A Diabiets {prediction}</p>
 </div>
 
 

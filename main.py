@@ -31,9 +31,9 @@ def index():
             # predictions using the loaded model file
             prediction=loaded_model.predict([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
             if prediction ==0:
-                print('You Dont HAve A Diabetes', prediction)
+                print('You Dont Have A Diabetes')
             else:
-                print('You HAve A Diabetes', prediction)
+                print('You Have A Diabetes')
             # showing the prediction results in a UI
             return render_template('results.html',prediction=(prediction[0]))
         except Exception as e:
