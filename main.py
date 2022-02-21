@@ -30,7 +30,10 @@ def index():
             loaded_model = pickle.load(open(filename, 'rb')) # loading the model file from the storage
             # predictions using the loaded model file
             prediction=loaded_model.predict([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
-            print('prediction is', prediction)
+            if prediction ==0:
+                print('You Dont HAve A Diabetes', prediction)
+            else:
+                print('You HAve A Diabetes', prediction)
             # showing the prediction results in a UI
             return render_template('results.html',prediction=(prediction[0]))
         except Exception as e:
